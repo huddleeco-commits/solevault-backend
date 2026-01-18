@@ -25,5 +25,10 @@ module.exports = {
       subject: 'Password Reset',
       html: `<p>Reset your password with token: ${resetToken}</p>`
     });
+  },
+
+  sendNewUserEmail: async ({ fullName, email, subscriptionTier }) => {
+    console.log('📧 New user registered:', email, '- Tier:', subscriptionTier);
+    return { success: true };
   }
 };

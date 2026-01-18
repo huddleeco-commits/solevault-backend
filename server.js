@@ -13,6 +13,9 @@ require('dotenv').config();
 
 const app = express();
 
+// Trust proxy (required for Railway/Heroku/etc behind load balancer)
+app.set('trust proxy', 1);
+
 // ============================================
 // MIDDLEWARE
 // ============================================

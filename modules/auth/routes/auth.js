@@ -7,8 +7,8 @@ const db = require('../database/db');
 // ===========================================
 // SECURITY CONFIGURATION
 // ===========================================
-const JWT_EXPIRES = '1h'; // Reduced from 24h for security
-const PASSWORD_MIN_LENGTH = 12;
+const JWT_EXPIRES = '24h';
+const PASSWORD_MIN_LENGTH = 8;
 
 // Validate JWT_SECRET at startup
 if (!process.env.JWT_SECRET) {
@@ -31,22 +31,6 @@ function validatePasswordStrength(password) {
 
   if (password.length < PASSWORD_MIN_LENGTH) {
     errors.push(`Password must be at least ${PASSWORD_MIN_LENGTH} characters`);
-  }
-
-  if (!/[A-Z]/.test(password)) {
-    errors.push('Password must contain at least one uppercase letter');
-  }
-
-  if (!/[a-z]/.test(password)) {
-    errors.push('Password must contain at least one lowercase letter');
-  }
-
-  if (!/\d/.test(password)) {
-    errors.push('Password must contain at least one number');
-  }
-
-  if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
-    errors.push('Password must contain at least one special character');
   }
 
   return { valid: errors.length === 0, errors };

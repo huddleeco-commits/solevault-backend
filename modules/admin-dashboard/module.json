@@ -1,0 +1,9 @@
+{
+  "name": "admin-dashboard",
+  "type": "backend",
+  "source": "healthcareos",
+  "extractedAt": "2026-01-08T13:05:46.322Z",
+  "files": [
+    "routes/admin.js"
+  ]
+}

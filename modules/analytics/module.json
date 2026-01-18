@@ -1,0 +1,10 @@
+{
+  "name": "analytics",
+  "type": "backend",
+  "source": "healthcareos",
+  "extractedAt": "2026-01-08T13:05:46.323Z",
+  "files": [
+    "routes/analytics.js",
+    "routes/metrics.js"
+  ]
+}
